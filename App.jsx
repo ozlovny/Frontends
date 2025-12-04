@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Send, Settings, MessageCircle, LogOut } from 'lucide-react';
 
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://backends-production-4dcf.up.railway.app/';
 
 const MessengerApp = () => {
   const [screen, setScreen] = useState('login');
@@ -23,7 +23,7 @@ const MessengerApp = () => {
   // WebSocket connection using native WebSocket API
   useEffect(() => {
     if (sessionId && !wsRef.current) {
-      const ws = new WebSocket('ws://localhost:3000');
+      const ws = new WebSocket('ws://backends-production-4dcf.up.railway.app/');
       
       ws.onopen = () => {
         console.log('WebSocket connected');
@@ -487,5 +487,6 @@ const MessengerApp = () => {
     </div>
   );
 };
+
 
 export default MessengerApp;
